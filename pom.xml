@@ -34,14 +34,6 @@
 		<url>https://github.com/Teqsoft/nio-jcifs-ng.git</url>
 	</scm>
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>Github Packages</name>
-			<url>https://maven.pkg.github.com/Teqsoft/nio-jcifs-ng</url>
-		</repository>
-	</distributionManagement>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -115,7 +107,31 @@
 
 	<profiles>
 		<profile>
-			<id>release</id>
+			<id>releaseGithub</id>
+				<distributionManagement>
+					<repository>
+						<id>github</id>
+						<name>Github Packages</name>
+						<url>https://maven.pkg.github.com/Teqsoft/nio-jcifs-ng</url>
+					</repository>
+				</distributionManagement>
+		</profile>
+
+		<profile>
+			<id>releaseOSS</id>
+
+			<!-- <distributionManagement>
+				<repository>
+					<id>ossrh</id>
+					<name>OSS Repository</name>
+					<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement> -->
+
 			<build>
 				<plugins>
 					<plugin>
@@ -157,6 +173,7 @@
 							</execution>
 						</executions>
 					</plugin>
+
 					<plugin>
 						<groupId>org.jreleaser</groupId>
 						<artifactId>jreleaser-maven-plugin</artifactId>
