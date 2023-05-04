@@ -10,8 +10,9 @@
 	<version>1.0.0</version>
 
 	<name>nio-jcifs-ng</name>
+	<description>Java NIO.2 file system provider that can be used to access CIFS/SMB 1.0 and 2.0 file systems.</description>
 
-	<url>http://www.teqsoft.com</url>
+	<url>https://github.com/Teqsoft/nio-jcifs-ng.git</url>
 
 	<developers>
 		<developer>
